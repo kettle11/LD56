@@ -826,25 +826,6 @@ fn main() {
                     rummage_options: vec![
                         SliderOption::Bullets,
                         SliderOption::Bullets,
-                        SliderOption::Toothpaste,
-                        SliderOption::Toothpaste,
-                        SliderOption::Nachos,
-                    ],
-                    ..Default::default()
-                },
-                Wave {
-                    victory_condition: WaveTrigger::LowAntCount(0),
-                    frame_delay: 60 * 20,
-                    ant_count: 80,
-                    ui_lines: vec![
-                        "WAVE 5".into(),
-                        "\"Believe you can and you're halfway there.\"".into(),
-                    ],
-                    rummage_options: vec![
-                        SliderOption::Bullets,
-                        SliderOption::Bullets,
-                        SliderOption::Toothpaste,
-                        SliderOption::Toothpaste,
                         SliderOption::Nachos,
                     ],
                     ..Default::default()
@@ -852,9 +833,9 @@ fn main() {
                 Wave {
                     victory_condition: WaveTrigger::LowAntCount(0),
                     frame_delay: 0,
-                    ant_count: 160,
+                    ant_count: 500,
                     ui_lines: vec![
-                        "WAVE 6".into(),
+                        "WAVE 5".into(),
                         "\"No man is more unhappy than he who never faces adversity.".into(),
                         "For he is not permitted to prove himself.\"".into(),
                     ],
@@ -870,35 +851,34 @@ fn main() {
                 Wave {
                     victory_condition: WaveTrigger::LowAntCount(0),
                     frame_delay: 0,
-                    ant_count: 320,
+                    ant_count: 10,
                     ui_lines: vec![
-                        "WAVE 7: THE PENULTIMATE BATTLE".into(),
+                        "The next wave will by your final battle.\n It will test you. Good luck".into(),
+                    ],
+                    rummage_options: vec![
+                        SliderOption::Toothpaste,
+                        SliderOption::Bullets,
+                        SliderOption::Bullets,
+                        SliderOption::Bullets,
+                        SliderOption::Bullets,
+                    ],
+                    ..Default::default()
+                },
+                Wave {
+                    victory_condition: WaveTrigger::LowAntCount(0),
+                    frame_delay: 0,
+                    ant_count: 2000,
+                    ui_lines: vec![
+                        "WAVE 6: THE FINAL BATTLE".into(),
                         "\"Masculinity is not something given to you but something you gain.\n".into(),
                         "And you gain it by winning small battles with honor.\"".into(),
                     ],
                     rummage_options: vec![
                         SliderOption::Bullets,
                         SliderOption::Bullets,
-                        SliderOption::Toothpaste,
-                        SliderOption::Toothpaste,
                         SliderOption::Bullets,
                         SliderOption::Bullets,
-                        SliderOption::Toothpaste,
-
-                    ],
-                    ..Default::default()
-                },
-                Wave {
-                    victory_condition: WaveTrigger::LowAntCount(0),
-                    frame_delay: 0,
-                    ant_count: 1000,
-                    ui_lines: vec![
-                        "WAVE 8: THE FINAL BATTLE".into(),
-                    ],
-                    rummage_options: vec![
                         SliderOption::Bullets,
-                        SliderOption::Bullets,
-                        SliderOption::Toothpaste,
                         SliderOption::Bullets,
                         SliderOption::Bullets,
                     ],
@@ -907,16 +887,12 @@ fn main() {
                 Wave {
                     victory_condition: WaveTrigger::LowAntCount(0),
                     frame_delay: 0,
-                    ant_count: 1000,
+                    ant_count: 1,
                     ui_lines: vec![
                         "the very last ant...".into(),
                     ],
                     rummage_options: vec![
-                        SliderOption::Bullets,
-                        SliderOption::Bullets,
-                        SliderOption::Toothpaste,
-                        SliderOption::Bullets,
-                        SliderOption::Bullets,
+                      
                     ],
                     ..Default::default()
                 },
@@ -1172,19 +1148,19 @@ fn main() {
                                     match o {
                                         SliderOption::Bullets => {
                                             ui_state.bonus_text = "Found 6 BULLETS".into();
-                                            bullet_count += 6;
+                                            bullet_count += 20;
                                             ui_state.display_bonus_text = 10.0;
                                         }
                                         SliderOption::Gun => {
                                             inventory.insert(CurrentItem::Gun);
                                             ui_state.bonus_text =
-                                                "Found a GUN in my pocket\nPress 3 to equip".into();
+                                                "Found a GUN in my pocket\nPress 4 to equip".into();
                                             ui_state.display_bonus_text = 60.0;
                                         }
                                         SliderOption::Nachos => {
                                             nacho_crumb_count += 6;
                                             ui_state.bonus_text =
-                                                "\"Chip crumbs. Perfect. \"\nPress 4 to equip"
+                                                "\"Chip crumbs. Perfect. \"\nPress 5 to equip"
                                                     .into();
                                             ui_state.display_bonus_text = 20.0;
                                         }
@@ -1193,7 +1169,7 @@ fn main() {
 
                                             toothpaste_tile_count += 200;
                                             ui_state.bonus_text =
-                                                "\"Toothpaste. Minty fresh barriers. \"\nPress 2 to equip"
+                                                "\"Toothpaste. Minty fresh barriers. \"\nPress 3 to equip"
                                                     .into();
                                             ui_state.display_bonus_text = 20.0;
                                         }
