@@ -1,0 +1,4 @@
+/target
+/assets/*
+/web_build
+web_build.zip
