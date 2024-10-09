@@ -867,11 +867,9 @@ fn main() {
                 Wave {
                     victory_condition: WaveTrigger::LowAntCount(0),
                     frame_delay: 0,
-                    ant_count: 2000,
+                    ant_count: 1000,
                     ui_lines: vec![
                         "WAVE 6: THE FINAL BATTLE".into(),
-                        "\"Masculinity is not something given to you but something you gain.\n".into(),
-                        "And you gain it by winning small battles with honor.\"".into(),
                     ],
                     rummage_options: vec![
                         SliderOption::Bullets,
@@ -1076,7 +1074,7 @@ fn main() {
                             sandbox_mode = true;
                             started_once = true;
                             grid_world.neutral_pheremones();
-                            spawn_ants(world, 1);
+                            spawn_ants(world, 200);
                             intro_interpolate = 100.0;
                             toothpaste_tile_count = i32::MAX;
                             spider_count = i32::MAX;
@@ -1147,12 +1145,13 @@ fn main() {
                                 Some(o) => {
                                     match o {
                                         SliderOption::Bullets => {
-                                            ui_state.bonus_text = "Found 6 BULLETS".into();
+                                            ui_state.bonus_text = "Found 20 BULLETS".into();
                                             bullet_count += 20;
                                             ui_state.display_bonus_text = 10.0;
                                         }
                                         SliderOption::Gun => {
                                             inventory.insert(CurrentItem::Gun);
+                                            bullet_count += 10;
                                             ui_state.bonus_text =
                                                 "Found a GUN in my pocket\nPress 4 to equip".into();
                                             ui_state.display_bonus_text = 60.0;
